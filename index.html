@@ -36,33 +36,37 @@
     <section class="destinations">
         <h2>What can we offer to you:</h2>
         <div class="cards">
-            <div class="card">
+            <div class="card" onclick="showModal(0)">
                 <img src="photos/j.JPG" alt="img">
                 <h3>Rooms</h3>
-                <p>Rooms
-                    Regular Rate
-                    Accommodations
-                    Extra Bed: 800 each
-                    Extra Bed: 1000/ inclusive</p>
+                <p class="definition" style="display: none;">Rooms Regular Rate Accommodations Extra Bed: 800 each Extra Bed: 1000/ inclusive</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="showModal(1)">
                 <img src="photos/b.JPG" alt="img">
                 <h3>Nature view</h3>
-                <p>Bethany Hill, Weluisa Farm is a perfect place for you to relax, enjoy nature and bond with your loved ones. It is a great venue to unwind from all your daily stress.</p>
+                <p class="definition" style="display: none;">Bethany Hill, Weluisa Farm is a perfect place for you to relax, enjoy nature and bond with your loved ones. It is a great venue to unwind from all your daily stress.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="showModal(2)">
                 <img src="photos/l.JPG" alt="">
                 <h3>Recreation</h3>
-                <p>Guests can enjoy a stunning swimming pool area that is perfect for relaxation and social gatherings. The pool is complemented by breathtaking views of the surrounding natural landscape, providing a picturesque backdrop for memorable moments.
-                    breakfast with views from the loft</p>
+                <p class="definition" style="display: none;">Guests can enjoy a stunning swimming pool area that is perfect for relaxation and social gatherings. The pool is complemented by breathtaking views of the surrounding natural landscape, providing a picturesque backdrop for memorable moments. breakfast with views from the loft</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="showModal(3)">
                 <img src="photos/a.jpg" alt="">
                 <h3>Additional Offerings</h3>
-                <p>Dining options at Bethany Hills may include an on-site restaurant or catering services for events, featuring a selection of local and international cuisine.</p>
+                <p class="definition" style="display: none;">Dining options at Bethany Hills may include an on-site restaurant or catering services for events, featuring a selection of local and international cuisine.</p>
             </div>
         </div>
     </section>
+
+    <!-- Modal for Image and Definition -->
+    <div id="modal" class="modal" style="display: none;">
+        <span class="close" onclick="closeModal()">×</span>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Destination Image">
+            <p id="modal-definition"></p>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -78,25 +82,36 @@
     <!-- About Section -->
     <section class="about" id="about">
         <h2>About Us</h2>
-        <p>About Bethany Hill, Weluisa Farm
-
-          Bethany Hill, Weluisa Farm is a perfect place for you to relax, enjoy nature and bond with your loved ones. It is a great venue to unwind from all your daily stress.
-          
-          Different events like birthdays, weddings, reunions and other life events can be held in the venue. Catering services are also offered.
-          
-          Entrance fee is P20/person.
-          
-          Food and Drinks are available. Short orders are also available and you can request for any food that you wish to be served, 2-3 days before your visit. Bringing your own food is allowed without any corkage fee but table/s must be rented for P50.
-          
-          SMOKING and DRINKING of LIQUOR is strictly prohibited any Violators will be BANNED.
-          
-          We suggest that you visit early morning (6-7am) to see the Sunrise or late afternoon (4-6pm) to see the Sunset. Bring your caps, jackets and umbrellas since its cold most of the time because of the cold mountain breeze.</p>
-          <p class="about">Contact us: 0975523697</p>
+        <p>About Bethany Hill, Weluisa Farm...</p>
+        <p class="about">Contact us: 0975523697</p>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Explore the Bethanim Hills. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Function to show modal with image and definition
+        function showModal(index) {
+            const images = ["photos/j.JPG", "photos/b.JPG", "photos/l.JPG", "photos/a.jpg"];
+            const definitions = [
+                "Rooms Regular Rate Accommodations Extra Bed: 800 each Extra Bed: 1000/ inclusive",
+                "Bethany Hill, Weluisa Farm is a perfect place for you to relax, enjoy nature and bond with your loved ones. It is a great venue to unwind from all your daily stress.",
+                "Guests can enjoy a stunning swimming pool area that is perfect for relaxation and social gatherings. The pool is complemented by breathtaking views of the surrounding natural landscape, providing a picturesque backdrop for memorable moments. breakfast with views from the loft",
+                "Dining options at Bethany Hills may include an on-site restaurant or catering services for events, featuring a selection of local and international cuisine."
+            ];
+
+            // Update modal content
+            document.getElementById("modal-image").src = images[index];
+            document.getElementById("modal-definition").innerText = definitions[index];
+            document.getElementById("modal").style.display = "block";
+        }
+
+        // Function to close modal
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
 </body>
 </html>
