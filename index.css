@@ -72,7 +72,7 @@ body {
 
 /* Information Section */
 .information {
-  padding: 2rem;
+  padding: 1rem;
   background-color: #eaf4fc;
   text-align: center;
 }
@@ -83,7 +83,7 @@ body {
 }
 
 .information p {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   margin: 0 auto;
   max-width: 800px;
 }
